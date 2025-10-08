@@ -1,0 +1,4 @@
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(GET_CUSTOMER_BY_ID(1).full_name);
+END;
+/
