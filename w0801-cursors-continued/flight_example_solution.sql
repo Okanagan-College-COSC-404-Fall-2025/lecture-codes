@@ -1,31 +1,30 @@
-CREATE OR REPLACE PROCEDURE gateChangeA(p_OldGate NUMBER, p_NewGate NUMBER) AS
---   v_FRec    Flights%ROWTYPE;
+CREATE OR REPLACE PROCEDURE gateChange(p_OldGate VARCHAR2, p_NewGate VARCHAR2) AS
   v_ALName  Airlines.Name%TYPE;
   CURSOR c_Flights IS SELECT * FROM Flights;
-  v_FRec  c_Flights%ROWTYPE;
 BEGIN
-  dbms_output.put_line('Change gate to ' || p_NewGate || ' for these flights:');
-  OPEN c_Flights;
-  LOOP
-    FETCH c_Flights INTO v_FRec;
-    EXIT WHEN c_Flights%NOTFOUND;
-    
-    
-    IF V_FRec.gate = p_OldGate AND v_FRec.departure > SYSDATE AND v_FRec.departure < SYSDATE +7 THEN
+  dbms_output.put_line('test');
+  FOR v_flight IN c_Flights LOOP
+    IF v_flight.gate = p_OldGate  and v_flight.departure > SYSDATE and v_flight.departure < SYSDATE + 7 THEN
       UPDATE FLIGHTS SET gate = p_NewGate 
-      WHERE FLTNO = v_FRec.FLTNO;
+      WHERE FLTNO = v_flight.FLTNO;
+      dbms_output.PUT_LINE('Changing gate for flight ' || v_flight.FLTNO || ' from ' || p_OldGate || ' to ' || p_NewGate || ' date ' ||v_flight.departure);
+
 
       SELECT a.name INTO v_ALName FROM Flights f, Airlines a
-      WHERE f.FLTNO = v_FRec.FLTNO AND f.Airline_ID = a.ID;
+      WHERE f.FLTNO = v_flight.FLTNO AND f.Airline_ID = a.ID;
       INSERT INTO Notifications (N_DATE, MSG) VALUES (SYSDATE, 'Gate changed to ' ||
-                  p_NewGate || ' for ' || v_ALName || ' ' || 'flight ' || v_FRec.FLTNO);
+                  p_NewGate || ' for ' || v_ALName || ' ' || 'flight ' || v_flight.FLTNO);
 
       COMMIT;
-     dbms_output.put_line(v_FRec.FLTNO);
+      dbms_output.put_line(v_flight.FLTNO);
    
     END IF;
   END LOOP;
-  CLOSE c_Flights;
-    DBMS_OUTPUT.PUT_LINE('test');
+
+
 END;
 /
+
+BEGIN
+gateChange('A4', 'b30');
+END;
