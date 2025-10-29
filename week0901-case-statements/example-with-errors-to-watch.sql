@@ -1,7 +1,7 @@
 SET SERVEROUTPUT ON
 DECLARE
-  v_x  number := &subvar;
-  v_flag  Number;
+  v_x  number := &subvar1;
+  v_flag  BOOLEAN;
 BEGIN
   CASE v_flag
   WHEN MOD(v_x,2) = 0 THEN
@@ -12,4 +12,4 @@ BEGIN
 END;
 
 /
--- Note: the selector data type ids number but MOD(v_x,2) = 0 is a Boolean.
+-- Note: the selector data type id is number but MOD(v_x,2) = 0 is a Boolean.

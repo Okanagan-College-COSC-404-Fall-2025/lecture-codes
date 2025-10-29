@@ -1,0 +1,4 @@
+UPDATE CUSTOMERS SET name = 'Bob Joey' WHERE ID = 3100004;
+ROLLBACK;
+
+SELECT * FROM customerAudit;

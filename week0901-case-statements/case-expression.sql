@@ -1,5 +1,5 @@
 DECLARE
-  v_x      number := &subvar1;
+  v_x      number := &subvar;
   v_flag   number;
   v_oddity varchar2(12);
 BEGIN
@@ -11,3 +11,4 @@ BEGIN
               END;
   dbms_output.put_line('v_oddity is '|| v_oddity);     
 END;
+/

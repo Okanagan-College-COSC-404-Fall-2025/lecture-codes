@@ -4,7 +4,7 @@ DECLARE
   v_y  number := 5;
   v_z  number := 3;
 BEGIN
-  CASE v_y + 2
+  CASE v_y + 2 
   WHEN v_x + 2 THEN dbms_output.put_line('v_x + 2 = '|| to_char(v_x + 2));
   WHEN v_x + 3 THEN dbms_output.put_line('v_x + 3 = '|| to_char(v_x + 3));
   WHEN v_z + 2 THEN dbms_output.put_line('v_z + 2 = '|| to_char(v_z + 2));

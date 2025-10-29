@@ -1,5 +1,5 @@
 DECLARE
-  v_x  number := 2;
+  v_x  number := 6;
   v_y  number := 5;
   v_z  number;
 BEGIN
