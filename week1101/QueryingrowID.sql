@@ -1,0 +1,2 @@
+SELECT ROWID FROM customers WHERE id = '1500001';
+

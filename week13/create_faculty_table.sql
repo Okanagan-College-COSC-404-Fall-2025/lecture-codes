@@ -1,0 +1,18 @@
+CREATE TABLE Faculty (ID NUMBER, name VARCHAR2(30), salary NUMBER, status VARCHAR2(10));
+INSERT INTO Faculty VALUES (1001, 'Joe Douglas', 20000, 'Part Time');
+INSERT INTO Faculty VALUES (1002, 'Ramona Barron', 20100, 'Full Time');
+INSERT INTO Faculty VALUES (1003, 'Dustin Farmer', 30000, 'Part Time');
+INSERT INTO Faculty VALUES (1004, 'Jenna Savage', 40000, 'Part Time');
+INSERT INTO Faculty VALUES (1005, 'Amari Colon', 50000, 'Part Time');
+INSERT INTO Faculty VALUES (1006, 'Astrid Sampson', 60000, 'Full Time');
+INSERT INTO Faculty VALUES (1007, 'Lucca Vaughan', 70000, 'Full Time');
+INSERT INTO Faculty VALUES (1008, 'Izaiah Cain', 22000, 'Full Time');
+INSERT INTO Faculty VALUES (1009, 'Blaine Savage', 26000, 'Part Time');
+INSERT INTO Faculty VALUES (1010, 'Amy Walter', 29000, 'Part Time');
+INSERT INTO Faculty VALUES (1011, 'Cameron Sandoval', 410000, 'Part Time');
+INSERT INTO Faculty VALUES (1012, 'Brynlee Beard', 40300, 'Full Time');
+INSERT INTO Faculty VALUES (1013, 'Jefferson Adkins', 20000, 'Part Time');
+INSERT INTO Faculty VALUES (1014, 'Camille Paul', 90000, 'Full Time');
+INSERT INTO Faculty VALUES (1015, 'Rayna Gibbs', 20000, 'Part Time');
+INSERT INTO Faculty VALUES (1016, 'Isaac Yates', 20500, 'Part Time');
+COMMit;
